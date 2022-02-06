@@ -3,7 +3,7 @@ This is a tutorial on how to do incorporate several images into the PCA transfor
  - the input folder which contains the images
  - the image suffix (e.g.: jpg, png, etc. )
  - the output folder where the model as where as the image data will be stored
- - the number of components to which the data dimensionality will be reduced.
+ - the number of components to which the data dimensionality will be reduced
 ## Overview 
 Basic checks are performed over the input like whether images are of the same sizes (it makes no sense in bringing them to the same PCA transform matrix otherwise) and whther the PCA count is not too large for the image count in the provided directory. 
 ## A note on limitations
