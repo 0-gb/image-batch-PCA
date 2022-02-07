@@ -5,6 +5,8 @@ This is a tutorial on how to apply the PCA transform to several images simultane
  - the output folder where the model as where as the image data will be stored
  - the number of components to which the data dimensionality will be reduced
 ## Overview 
+The main question when dealing with image transform by PCA is how to translate the image data into somehting that the PCA transform will understand, i.e. points in some hyperspace (fancy word for high dimensional vercotrs basically). In this tutorial each channel of an image is taken as its own variable so each image is represented as three variables (RGB). The length of the vectors upon which the PAC must operate is `dim1*dim2` where `dim1` and `dim2` are the horizontal and vertical size of the images respectively. This is slightly different than what tends to be taken when applying PCA to a single image where the image's spreadsheet is generally also the matrix supplied into the PCA. 
+
 Basic checks are performed over the input like whether the input directory exists, whether the images are of the same sizes (it makes no sense in bringing them to the same PCA transform matrix otherwise) and whether the PCA count is not too large for all the images in the provided directory which would cause an undefined system of equations in the background. After providing the required data, the user can start the PCA for the selected images. 
 
 For a large collection of images the entire process may take a long time so there is some output printed to the console that helps the user predict when the process will be finished - the output informs the user of how many chunks have been passed out of the total and at what times they were finished.
@@ -43,7 +45,7 @@ Note here, the statements that lock the reconstructed values to above zero and b
 
 
 The images obtained from the methods `get_reconstructed_data` and `reconstruct_image` are sorted in such a way that matplotlib can show them without needing to reorder any colour channels. 
-The repo contains a zip file a batch sample batch of images that was taken from the COCO competition of 2014. 
+The repo contains a zip file a batch sample batch of images that was obtained by taking some images from the COCO competition of 2014 and cropping them to 640 x 480. 
 
 
 
