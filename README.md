@@ -34,9 +34,17 @@ def reconstruct_image(test_image_index, pca_data, pca_model, dimensions):
                       returned_image[1].reshape(dimensions[0], dimensions[1]),
                       returned_image[2].reshape(dimensions[0], dimensions[1]))).astype(np.uint8)
 ```
-Note here, the statements that lock the reconstructed values to above zero and to below 255 in the `reconstruct_image` method above. 
 
-The images obtained from the above two methods are readily sorted in such a way that matplotlib can show them without needing to reorder any colour channels. 
+
+Note here, the statements that lock the reconstructed values to above zero and below 255 in the `reconstruct_image` method above. This is done to avoid getting values that cannot be interpreted by matplotlib and would cause those weird dots as can be seen in the example below.
+| ![Uncleaned PCA output sample](https://www.askpython.com/wp-content/uploads/2020/10/compressed-image-with-first-50-Principal-Components.jpeg.webp) | 
+|:--:| 
+| *Uncleaned PCA output of an image -  some colour channels go below 0 or over 255 creating invalid pixels* |
+
+
+The images obtained from the methods `get_reconstructed_data` and `reconstruct_image` are sorted in such a way that matplotlib can show them without needing to reorder any colour channels. 
+The repo contains a zip file a batch sample batch of images that was taken from the COCO competition of 2014. 
+
 
 
 
